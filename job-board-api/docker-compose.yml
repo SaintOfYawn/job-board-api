@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: jobboard
+      POSTGRES_USER: jobboard
+      POSTGRES_PASSWORD: jobboard
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    env_file:
+      - .env
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:
+    
