@@ -1,35 +1,93 @@
-# Job Board API (FastAPI + PostgreSQL)
+# Job Board API
 
-Мини-сервис вакансий и откликов (мини HeadHunter). Проект сделан в стиле "фриланс/коммерция":
-слои (routers/schemas/crud/models), JWT, роли, миграции, Docker, тесты и CI.
+Backend service for job posting and application management (Mini HeadHunter).
+
+## Tech Stack
+
+- FastAPI
+- Async SQLAlchemy
+- PostgreSQL
+- Alembic
+- JWT Authentication
+- Docker
+- pytest
+- GitHub Actions (CI)
+
+---
 
 ## Features
-- JWT auth (user / company / admin)
-- Company profile (1 company на company-user)
-- Vacancies CRUD (только владелец компании / admin)
-- Applications (без дублей)
-- Filters + pagination
-- Swagger `/docs`
-- Alembic migrations (авто при старте docker)
-- Seed demo-data
-- Tests + GitHub Actions CI
 
-## Run (Docker)
-```bash
-cp .env.example .env
-docker compose up --build
-```
+- JWT authentication
+- Role-based access (user / company / admin)
+- Company profiles
+- CRUD operations for job vacancies
+- Apply to jobs (no duplicate applications)
+- Filtering and pagination
+- Async architecture
+- Swagger documentation
+- Database migrations (Alembic)
+- Docker deployment
+- Automated tests
+- CI pipeline
 
-Swagger:
-- http://localhost:8000/docs
+---
 
-## Seed demo data
-```bash
-docker compose exec api python scripts/seed.py
-```
+## Project Structure
 
-## Tests (local)
-```bash
-pytest -q
-```
 
+app/
+├── models/
+├── schemas/
+├── routers/
+├── services/
+├── database/
+├── core/
+└── main.py
+
+
+---
+
+## Run Locally
+
+### 1. Clone repository
+
+
+git clone https://github.com/SaintOfYawn/job-board-api.git
+
+cd job-board-api
+
+
+### 2. Run with Docker
+
+
+docker-compose up --build
+
+
+API будет доступен:
+
+http://localhost:8000/docs
+
+
+---
+
+## API Documentation
+
+Swagger UI:
+
+/docs
+
+
+---
+
+## Tests
+
+
+pytest
+
+
+---
+
+## Author
+
+Danila Denisov 
+Junior Python Backend Developer
